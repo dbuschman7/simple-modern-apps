@@ -19,18 +19,22 @@
 
 # Go workspace file
 go.work
+
 lambda/go/bootstrap
-
 *.tar
-
-
 .DS_Store
 .idea
 .vscode
 *.iml
+
 *.log
 *.log.*
+
 .scala-build/
 .metals
-lambda/scala/target
-lambda/rust/target
+target/
+
+infrastructure/.terraform.lock.hcl
+infrastructure/.terraform/providers/registry.terraform.io/hashicorp/aws/3.46.0/darwin_amd64
+infrastructure/terraform.tfstate
+infrastructure/terraform.tfstate.backup

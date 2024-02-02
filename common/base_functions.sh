@@ -1,4 +1,13 @@
+# set -x # echo on
+
 export DOCKER_HUB_USER="timeflies"
+
+function scriptLocalDir() {
+  echo "Param $1"
+  local scriptDir="$(dirname "$(readlink -f "$1")")"
+  echo "Script directory: $scriptDir"
+  cd $scriptDir
+}
 
 function microk8sRunning() {
   local running=$(microk8s status | grep -c "is running" | wc -l)

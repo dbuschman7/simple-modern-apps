@@ -1,9 +1,13 @@
 #!/bin/sh 
 set -e
 
-version="latest"
-
 . ../../common/base_functions.sh
+
+# Force our script to run in the same directory as the script
+scriptLocalDir $0
+
+version="$( cat version.txt )"
+
 
 # Build the Rust Lambda function
 cargo lambda build --release

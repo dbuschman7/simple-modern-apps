@@ -3,7 +3,7 @@ FROM gcr.io/distroless/base-debian11
 
 WORKDIR /
 
-COPY bootstrap /bootstrap
+COPY target/bootstrap /bootstrap
 
 EXPOSE 8080
 
