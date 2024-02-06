@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package = "google.golang.org/grpc/examples/route_guide/routeguide";
+
+package proto;
+
+service ConfigService {
+
+     rpc GetFeatureConfig(Application) returns (FeatureConfig) {}
+
+}
+
+
+message Application {
+    string name = 1;
+    string feature = 2;
+}
+
+message FeatureConfig { 
+   bool enabled = 1;
+   int32 maxFoo = 2; 
+   string prefixBar = 3; 
+}
