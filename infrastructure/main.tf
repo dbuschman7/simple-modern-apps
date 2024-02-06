@@ -31,9 +31,9 @@ variable "repository_names" {
   description = "Names to create repos for"
   type        = list(string)
   default     = [
-     "lambda-go",
-     "lambda-scala",
-     "lambda-rust"
+     "language-demo-go",
+     "language-demo-scala",
+     "language-demo-rust"
     ]
 }
 
