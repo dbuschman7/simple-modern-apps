@@ -1,12 +1,11 @@
 #!/bin/sh 
 set -ex
-. ../../common/base_functions.sh
+source  ../../common/base_functions.sh
+scriptLocalDir $0 # Force our script to run in the same directory as the script
 
-# Force our script to run in the same directory as the script
-scriptLocalDir $0
+source ./.env
 
-version="$( cat version.txt )"
-
+# Begin the build
 mkdir -p target
 
 export CGO_ENABLED=0 
@@ -20,11 +19,11 @@ echo "********************************************************************"
 ls -h target/bootstrap
 echo "********************************************************************"
 
-packageDockerImage Dockerfile lambda-go $version
+packageDockerImage Dockerfile $APP_NAME $APP_VERSION
 
 # Dump the image
 echo "********************************************************************"
-docker images | grep lambda-go
+docker images | grep $APP_NAME 
 echo "********************************************************************"
 
 
