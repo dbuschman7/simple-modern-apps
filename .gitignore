@@ -41,3 +41,5 @@ infrastructure/terraform.tfstate.backup
 infrastructure/.terraform
 config-service/config/config-service.pb.go
 config-service/config/config-service_grpc.pb.go
+lambda/go/terraform/.terraform
+lambda/go/terraform/.terraform.lock.hcl
