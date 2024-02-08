@@ -2,20 +2,25 @@
 
 ## Setup
 
-```shell
-go mod init github.com/dbuschman7/run-stats-service
-go mod tidy
-go get -d github.com/99designs/gqlgen
-go run github.com/99designs/gqlgen init
-go run server.go
-```
+# Setup
+* define the GraphQL schema for making calls
+* stand up server
+* return collect data into go version to Scala TrieMap - [Map Database](./graph/collection.go)
+* [version.txt](./version.txt) conatains the active image version tag
+* [Dockerfile](./Dockerfile) assembles the image
+* [run-stats-service.go](./run-stats-service.go) - Application main
+
+
+## Steps
+
+* [build.sh](./build.sh) -- cleanup, code gne, build and package
+* [run-bare-metal.sh](./run-bare-metal.sh) -- run local on laptop
+* TODO - run as k8s DaemonSet with local network only service
+* TODO - include in helm chart and docker-compose deployment
 
 ## Regenerate GraphQL schema
 
-``` shell 
-go run github.com/99designs/gqlgen generate
-go run server.go
-```
+* See build.sh, happens every build for now
 
 ## Example mutations
 
@@ -37,7 +42,7 @@ mutation {
 }
 ```
 
-## Exmaple Query
+## Example Query
 
 ```graphql
 query {

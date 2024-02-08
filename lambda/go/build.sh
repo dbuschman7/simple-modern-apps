@@ -13,7 +13,7 @@ export GOOS=linux
 export GOARCH=amd64 
 
 # build the lambda function
-go build -o target/bootstrap  -ldflags="-s -w" main.go
+go build -o target/bootstrap  -ldflags="-s -w" lambda.go
 
 echo "********************************************************************"
 ls -h target/bootstrap
