@@ -18,7 +18,7 @@ mkdir -p config
 
 
 # Generate the proto file
-protoc  --go_out=config   --go_opt=paths=source_relative \
+protoc   --go_out=config  --go_opt=paths=source_relative \
     --go-grpc_out=config  --go-grpc_opt=paths=source_relative \
     config-service.proto
 

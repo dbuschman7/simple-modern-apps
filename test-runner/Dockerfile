@@ -3,12 +3,8 @@ FROM gcr.io/distroless/base-debian11
 
 WORKDIR /
 
-COPY target/test-runner /application
-
-EXPOSE 8080
+COPY target/test-runner /test-runner
 
 USER nonroot:nonroot
 
-ENTRYPOINT ["/application"]
-
-CMD [ "--port 8080" ]
+ENTRYPOINT ["/test-runner"]

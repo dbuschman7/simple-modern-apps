@@ -3,12 +3,12 @@ FROM gcr.io/distroless/base-debian11
 
 WORKDIR /
 
-COPY target/config-service /config-service
+COPY target/run-stats-service /run-stats-service
 
-EXPOSE 5000
+EXPOSE 8080
 
 USER nonroot:nonroot
 
-ENTRYPOINT ["/config-service"]
+ENTRYPOINT ["/run-stats-service"]
 
-CMD [ "--port 5000" ]
+CMD [ "--port 8080" ]

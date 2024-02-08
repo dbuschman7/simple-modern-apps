@@ -1,5 +1,5 @@
 #! /bin/sh 
-set -ex 
+set -e
 APP_NAME="test-runner"
 
 . ../common/base_functions.sh
@@ -18,7 +18,7 @@ CONFIG_DIR=$BASE_DIR/config
 cd ../config-service
 
 # Generate the proto file
-protoc  --go_out=$CONFIG_DIR   --go_opt=paths=source_relative \
+protoc   --go_out=$CONFIG_DIR   --go_opt=paths=source_relative \
     --go-grpc_out=$CONFIG_DIR   --go-grpc_opt=paths=source_relative \
     config-service.proto
 
