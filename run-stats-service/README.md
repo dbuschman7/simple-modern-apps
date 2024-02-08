@@ -3,7 +3,7 @@
 ## Setup
 
 ```shell
-go mod init github.com/dbuschman7/smoke-test-service
+go mod init github.com/dbuschman7/run-stats-service
 go mod tidy
 go get -d github.com/99designs/gqlgen
 go run github.com/99designs/gqlgen init

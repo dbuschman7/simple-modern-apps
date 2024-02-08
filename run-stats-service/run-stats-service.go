@@ -1,13 +1,14 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"os"
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
-	"github.com/dbuschman7/smoke-test-service/graph"
+	"github.com/dbuschman7/run-stats-service/graph"
 )
 
 const defaultPort = "8080"
@@ -17,6 +18,8 @@ func main() {
 	if port == "" {
 		port = defaultPort
 	}
+
+	fmt.Println(fmt.Sprint("Starting server on port ", port))
 
 	srv := handler.NewDefaultServer(graph.NewExecutableSchema(graph.Config{Resolvers: &graph.Resolver{}}))
 

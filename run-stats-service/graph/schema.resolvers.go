@@ -8,7 +8,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/dbuschman7/smoke-test-service/graph/model"
+	"github.com/dbuschman7/run-stats-service/graph/model"
 )
 
 // PostTestRun is the resolver for the postTestRun field.

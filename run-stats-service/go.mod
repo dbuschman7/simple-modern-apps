@@ -1,4 +1,4 @@
-module github.com/dbuschman7/smoke-test-service
+module github.com/dbuschman7/run-stats-service
 
 go 1.21.6
 

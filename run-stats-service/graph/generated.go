@@ -14,7 +14,7 @@ import (
 
 	"github.com/99designs/gqlgen/graphql"
 	"github.com/99designs/gqlgen/graphql/introspection"
-	"github.com/dbuschman7/smoke-test-service/graph/model"
+	"github.com/dbuschman7/run-stats-service/graph/model"
 	gqlparser "github.com/vektah/gqlparser/v2"
 	"github.com/vektah/gqlparser/v2/ast"
 )
@@ -259,7 +259,7 @@ func (ec *executionContext) field_Mutation_postTestRun_args(ctx context.Context,
 	var arg0 *model.TestRun
 	if tmp, ok := rawArgs["run"]; ok {
 		ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("run"))
-		arg0, err = ec.unmarshalOTestRun2ᚖgithubᚗcomᚋdbuschman7ᚋsmokeᚑtestᚑserviceᚋgraphᚋmodelᚐTestRun(ctx, tmp)
+		arg0, err = ec.unmarshalOTestRun2ᚖgithubᚗcomᚋdbuschman7ᚋrunᚑstatsᚑserviceᚋgraphᚋmodelᚐTestRun(ctx, tmp)
 		if err != nil {
 			return nil, err
 		}
@@ -404,7 +404,7 @@ func (ec *executionContext) _Query_stats(ctx context.Context, field graphql.Coll
 	}
 	res := resTmp.([]*model.Stats)
 	fc.Result = res
-	return ec.marshalNStats2ᚕᚖgithubᚗcomᚋdbuschman7ᚋsmokeᚑtestᚑserviceᚋgraphᚋmodelᚐStats(ctx, field.Selections, res)
+	return ec.marshalNStats2ᚕᚖgithubᚗcomᚋdbuschman7ᚋrunᚑstatsᚑserviceᚋgraphᚋmodelᚐStats(ctx, field.Selections, res)
 }
 
 func (ec *executionContext) fieldContext_Query_stats(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
@@ -3045,7 +3045,7 @@ func (ec *executionContext) marshalNInt2int(ctx context.Context, sel ast.Selecti
 	return res
 }
 
-func (ec *executionContext) marshalNStats2ᚕᚖgithubᚗcomᚋdbuschman7ᚋsmokeᚑtestᚑserviceᚋgraphᚋmodelᚐStats(ctx context.Context, sel ast.SelectionSet, v []*model.Stats) graphql.Marshaler {
+func (ec *executionContext) marshalNStats2ᚕᚖgithubᚗcomᚋdbuschman7ᚋrunᚑstatsᚑserviceᚋgraphᚋmodelᚐStats(ctx context.Context, sel ast.SelectionSet, v []*model.Stats) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -3069,7 +3069,7 @@ func (ec *executionContext) marshalNStats2ᚕᚖgithubᚗcomᚋdbuschman7ᚋsmok
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalOStats2ᚖgithubᚗcomᚋdbuschman7ᚋsmokeᚑtestᚑserviceᚋgraphᚋmodelᚐStats(ctx, sel, v[i])
+			ret[i] = ec.marshalOStats2ᚖgithubᚗcomᚋdbuschman7ᚋrunᚑstatsᚑserviceᚋgraphᚋmodelᚐStats(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -3377,7 +3377,7 @@ func (ec *executionContext) marshalOBoolean2ᚖbool(ctx context.Context, sel ast
 	return res
 }
 
-func (ec *executionContext) marshalOStats2ᚖgithubᚗcomᚋdbuschman7ᚋsmokeᚑtestᚑserviceᚋgraphᚋmodelᚐStats(ctx context.Context, sel ast.SelectionSet, v *model.Stats) graphql.Marshaler {
+func (ec *executionContext) marshalOStats2ᚖgithubᚗcomᚋdbuschman7ᚋrunᚑstatsᚑserviceᚋgraphᚋmodelᚐStats(ctx context.Context, sel ast.SelectionSet, v *model.Stats) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}
@@ -3400,7 +3400,7 @@ func (ec *executionContext) marshalOString2ᚖstring(ctx context.Context, sel as
 	return res
 }
 
-func (ec *executionContext) unmarshalOTestRun2ᚖgithubᚗcomᚋdbuschman7ᚋsmokeᚑtestᚑserviceᚋgraphᚋmodelᚐTestRun(ctx context.Context, v interface{}) (*model.TestRun, error) {
+func (ec *executionContext) unmarshalOTestRun2ᚖgithubᚗcomᚋdbuschman7ᚋrunᚑstatsᚑserviceᚋgraphᚋmodelᚐTestRun(ctx context.Context, v interface{}) (*model.TestRun, error) {
 	if v == nil {
 		return nil, nil
 	}
