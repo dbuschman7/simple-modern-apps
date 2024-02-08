@@ -1,0 +1,28 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+# ################
+# Queries
+# ################
+type Stats { 
+  language:String!
+   count:Int!
+   average:Float! 
+}
+
+type Query {
+  stats: [Stats]!
+}
+
+# ################
+# Mutations 
+# ################
+input TestRun { 
+  language:String! 
+  timePerRunMs: Int!
+}
+
+type Mutation {
+  postTestRun(run: TestRun): Boolean!
+}
