@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"flag"
-	"fmt"
 	"log"
 	"math/rand"
 	"os"
@@ -17,8 +16,8 @@ import (
 var (
 	language    = flag.String("language", "unspecified", "Feature name to get config for")
 	environment = flag.String("environment", "dev", "Environment to get config for")
-	iterations  = flag.Int("iterations", 10, "Number of iterations to run")
-	delay       = flag.Int("delay", 10, "Delay between iterations in seconds")
+	iterations  = flag.Int("iterations", 12, "Number of iterations to run")
+	delay       = flag.Int("delay", 5, "Delay between iterations in seconds")
 	r           = rand.New(rand.NewSource(time.Now().UnixNano()))
 )
 
@@ -31,18 +30,11 @@ func getEnv(key, defaultValue string) string {
 	return value
 }
 
-type PostTestRun string
-
-func PostTestRunToSmokeTestService(url string, runNumber int, language string, duration int64) PostTestRun {
-	fmt.Println(fmt.Sprintf("Posting test %v run for %s with duration %d", runNumber, language, duration))
-	return "PostTestRun"
-}
-
 func main() {
 	flag.Parse()
 
 	configServiceAddr := getEnv("CONFIG_SERVICE_ADDR", "config-service.common.svc:8080")
-	runStatsServiceAddr := getEnv("RUN_STATS_SERVICE_ADDR", "run-stats-service.test.svc:8080")
+	runStatsServiceAddr := getEnv("RUN_STATS_SERVICE_ADDR", "http://run-stats-service.test.svc:8080/query")
 
 	// accountId := getEnv("AWS_ACCOUNT_ID", "unknown")
 
@@ -90,7 +82,7 @@ func main() {
 		// TODO: call the lambda here
 		random := r.Int63n(1000)
 
-		PostTestRunToSmokeTestService(smokeTestServiceAddr, i, *language, random)
+		PostTestRunToSmokeTestService(runStatsServiceAddr, i, *language, random)
 		time.Sleep(time.Duration(*delay) * time.Second)
 	}
 

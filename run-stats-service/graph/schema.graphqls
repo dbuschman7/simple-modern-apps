@@ -23,6 +23,10 @@ input TestRun {
   timePerRunMs: Int!
 }
 
+type Response {
+  success:Boolean!
+}
+
 type Mutation {
-  postTestRun(run: TestRun): Boolean!
+  postTestRun(run: TestRun): Response!
 }
