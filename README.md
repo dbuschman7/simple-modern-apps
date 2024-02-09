@@ -18,13 +18,13 @@ Test bed for comparing modern languages and interactions in simple ways with orc
 
 ## Specific Goals
 
-* Concurrency and thread safety - Scala has TrieMap, what bout Go, Rust
+* Concurrency and thread safety - Scala has TrieMap, what about Go, Rust
 * gRPC friendly-ness
 * GraphQL friendly-ness
 * Lambda friendly-ness deployed via Docker
 * 12-factor as much as possible
 
-## AWS Lmabda
+## AWS Lambda
 
 [Go version README](./lambda/go/README.md)
 
@@ -52,7 +52,7 @@ Test bed for comparing modern languages and interactions in simple ways with orc
 
 ## Test Runner
 
-[GO version README](./test-runner/README.md)
+[Go version README](./test-runner/README.md)
 
 * load config on startup from config-service
 * make direct call to AWS Lambda from a given language
