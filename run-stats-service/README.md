@@ -5,7 +5,7 @@
 * define the GraphQL schema for making calls
 * stand up server
 * return collect data into go version to Scala TrieMap - [Map Database](./graph/collection.go)
-* [version.txt](./version.txt) conatains the active image version tag
+* [version.txt](./version.txt) contains the active image version tag
 * [Dockerfile](./Dockerfile) assembles the image
 * [run-stats-service.go](./run-stats-service.go) - Application main
 

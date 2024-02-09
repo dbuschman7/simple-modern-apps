@@ -3,10 +3,10 @@
 ## Setup
 
 * standup gRPC client to get config
-* Create [simple client](./run-stats-client.go) to test forign integration simplicity
+* Create [simple client](./run-stats-client.go) to test foreign integration simplicity
 * stand up server
 * make call to AWS lambda and submit timing to run stats service
-* [version.txt](./version.txt) conatains the active image version tag
+* [version.txt](./version.txt) contains the active image version tag
 * [Dockerfile](./Dockerfile) assembles the image
 * [test-runner.go](./test-runner.go) - Application main
 
